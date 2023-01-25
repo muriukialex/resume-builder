@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import type { ProfessionalDetails, ProfessionalExperience } from '../../global/types'
 import { useContextDetails } from '../../context/ContextProvider'
-import { capitalizeFirstCharacter, getRelevantDateInfo } from '../../utils'
+import { getRelevantDateInfo } from '../../utils'
 import { errorStyles } from '../../utils'
 import { ToolTip, AddIconCircle } from '../../Icons'
 
@@ -28,7 +28,7 @@ const ProfessionalDetailsForm = () => {
 		const { position, company, responsibilities } = data
 		const { startDate, endDate } = dates
 		let details = {
-			position: capitalizeFirstCharacter(position),
+			position: position,
 			company: company,
 			responsibilities: responsibilities,
 			startDate: getRelevantDateInfo(startDate),

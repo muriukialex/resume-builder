@@ -36,7 +36,7 @@ const ReviewYourResume = () => {
 		pdf.setLineHeightFactor(1.5)
 		pdf.setFont('helvetica', 'bold')
 		pdf.setFontSize(20)
-		pdf.text('CURRICULUM VITAE', pdf.internal.pageSize.width / 2.6, 10)
+		pdf.text('CURRICULUM VITAE', pdf.internal.pageSize.width / 3.0, 10)
 
 		// personal details
 		pdf.setFont('times', 'normal')
@@ -77,9 +77,9 @@ const ReviewYourResume = () => {
 			YprofessionalDetail += 10
 			pdf.setFont('times', 'normal')
 			pdf.text(`${summary.responsibilities}`, 10, YprofessionalDetail)
-			YprofessionalDetail += 10
 		})
 
+		YprofessionalDetail += 10
 		let y = YprofessionalDetail + professionalDetails.length * 10
 		// education
 		pdf.setFontSize(16)
@@ -93,7 +93,7 @@ const ReviewYourResume = () => {
 			if (i > 0) {
 				y += 10
 			}
-			pdf.text(`${summary.course}, ${summary.startDate} to ${summary.endDate}`, 10, y)
+			pdf.text(`${summary.course}, (${summary.startDate} to ${summary.endDate})`, 10, y)
 			y += 10
 			pdf.text(`${summary.institution}`, 10, y)
 			y += 10

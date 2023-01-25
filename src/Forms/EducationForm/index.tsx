@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import type { EducationDetails, EducationDetailsInfo } from '../../global/types'
 import { useContextDetails } from '../../context/ContextProvider'
-import { capitalizeFirstCharacter, getRelevantDateInfo } from '../../utils'
+import { getRelevantDateInfo } from '../../utils'
 import { errorStyles } from '../../utils'
 import { ToolTip, AddIconCircle } from '../../Icons'
 
@@ -28,8 +28,8 @@ const EducationForm = () => {
 		const { institution, course } = data
 		const { startDate, endDate } = dates
 		let details = {
-			institution: capitalizeFirstCharacter(institution),
-			course: capitalizeFirstCharacter(course),
+			institution: institution,
+			course: course,
 			startDate: getRelevantDateInfo(startDate),
 			endDate: getRelevantDateInfo(endDate),
 		}
